@@ -5,8 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= htmlWebpackPlugin.options.title %> </title>
+    <script src="https://kit.fontawesome.com/fe8431d094.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h2>hello world</h2>
+    <main>
+        <div class="head">
+            <p>today's to Do</p>
+        </div>
+        <form action="">
+            <input type="text" placeholder="Add to list...">
+            <button type="submit">
+                <i class="fa-solid fa-repeat"></i>
+            </button>
+        </form>
+        <div class="todos">
+            <div class="each">
+                <input type="checkbox" id="green">
+                <input type="text" id="tasks" readonly >
+                <div class="icons">
+                    <i class="fa-solid fa-ellipsis-vertical" id="more"></i>
+                    <i class="fa-solid fa-trash" id="trash"></i>
+                </div>
+            </div>
+            <div class="each">
+                <input type="checkbox" id="green">
+                <input type="text" id="tasks" readonly>
+                <div class="icons">
+                    <i class="fa-solid fa-ellipsis-vertical" id="more"></i>
+                    <i class="fa-solid fa-trash" id="trash"> </i>
+                </div>
+            </div>
+
+            <div class="each">
+                <input type="checkbox" id="green">
+                <input type="text" id="tasks" readonly>
+                <div class="icons">
+                    <i class="fa-solid fa-ellipsis-vertical" id="more"></i>
+                    <i class="fa-solid fa-trash" id="trash"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="clears">
+            <button id="clear"> clear all completed </button>
+        </div>
+
+    </main>
 </body>
 </html>
