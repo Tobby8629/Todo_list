@@ -1,7 +1,7 @@
 import Tasks from './tasks.js';
 import display from './display.js';
 
-export default class Array {
+export default class Arr {
   constructor() {
     this.todos = [];
   }
@@ -17,15 +17,19 @@ export default class Array {
   }
 
   changeindex() {
-    this.todos.forEach((todo, index) => (
-      todo.index = index + 1
-    ));
+    this.todos.forEach((todo, index) => {
+      todo.index = index + 1;
+    });
   }
 
   updatetodo(cmt, replace) {
-    this.todos.forEach((todo, index) => (
-      index === cmt && (todo.desc = replace.value)
-    ));
+    this.todos.forEach((todo, index) => {
+      if (index === cmt) {
+        (
+          (todo.desc = replace.value)
+        );
+      }
+    });
   }
 
   reload(replay, main) {

@@ -1,4 +1,4 @@
-import Array from './array.js';
+import Arr from './array.js';
 import check from './checker.js';
 import more from './more.js';
 
@@ -7,7 +7,7 @@ const form = () => {
   const fort = document.querySelector('#form');
   const get = document.querySelector('#name');
 
-  const todo = new Array();
+  const todo = new Arr();
 
   fort.addEventListener('submit', (e) => {
     e.preventDefault();
