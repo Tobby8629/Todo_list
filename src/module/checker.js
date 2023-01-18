@@ -4,7 +4,6 @@ const check = () => {
 
   check.forEach((check) => check.addEventListener('click', () => {
     check.classList.toggle('it');
-    
   }));
 };
 
