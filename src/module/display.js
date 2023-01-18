@@ -4,8 +4,9 @@ const display = (arry, main) => {
       <div class='white'></div>
       <i class="fa-solid fa-check"></i>
     </div>
-    
-    <input type="text" id="tasks" value= "${arry.description}" readonly >
+    <form>
+      <input type="text" id="tasks" value= "${arry.desc}" readonly >
+    </form>
     <div class="icons">
         <i class="fa-solid fa-ellipsis-vertical" id="more"></i>
         <i class="fa-solid fa-trash" id="trash"></i>

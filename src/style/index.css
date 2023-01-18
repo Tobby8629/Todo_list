@@ -28,13 +28,13 @@ head {
   font-size: 15px;
 }
 
-form {
+#form {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-form input {
+#form input {
   width: 95%;
   height: 100%;
   font-style: italic;
@@ -42,13 +42,23 @@ form input {
   outline: none;
 }
 
-form button {
+#form button {
   outline: none;
   background-color: transparent;
   border: none;
 }
 
-form i {
+.ic i {
+  color: blue;
+  display: none;
+  font-size: 15px;
+}
+
+.it i {
+  display: block;
+}
+
+#form i {
   font-size: 16px;
 }
 
@@ -58,12 +68,35 @@ form i {
   align-items: center;
 }
 
+.each form {
+  width: 100%;
+  padding: 0;
+  border: none;
+}
+
 #tasks {
   width: 100%;
   height: 30px;
   margin: 0 10px;
   outline: none;
   border: none;
+  background-color: transparent;
+}
+
+.anti {
+  background-color: antiquewhite;
+}
+
+#trash {
+  display: none;
+}
+
+.pop #trash {
+  display: block;
+}
+
+.pop #more {
+  display: none;
 }
 
 .ic {
@@ -78,22 +111,12 @@ form i {
   background-color: transparent;
 }
 
-.ic i {
-  color: blue;
-  display: none;
-  font-size: 15px;
-}
-
-.it i {
-  display: block;
-}
-
 .it .white {
   display: none;
 }
 
-#trash {
-  display: none;
+.line {
+  text-decoration: line-through;
 }
 
 .clears {
