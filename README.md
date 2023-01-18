@@ -2,8 +2,6 @@
 <a name="readme-top"></a>
 
 
-</div>
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#portfolio)

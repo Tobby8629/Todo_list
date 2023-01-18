@@ -1,28 +1,34 @@
-const array = [
-  {
-    description: 'sweep the floor',
-    completed: true,
-    index: 1,
-  },
+import Tasks from "./tasks.js";
+import display from "./display.js";
 
-  {
-    description: 'wash my clothes',
-    completed: true,
-    index: 4,
-  },
+export default class Array {
+  constructor(){
+    this.todos = [];
+  }
+  addTodo(desc,main,){
+    const fresh = new Tasks(desc,this.todos.length + 1);
+    this.todos.push(fresh);
+    this.todos.map(todo => display(todo,main))
+  }
 
-  {
-    description: 'brush my teeth',
-    completed: true,
-    index: 2,
-  },
+  removeTodo(id){ 
+   this.todos=this.todos.filter(td => td.index !== id);
+  }
 
-  {
-    description: 'clean the house',
-    completed: true,
-    index: 3,
-  },
+  changeindex(){
+    this.todos.forEach((todo,index)=>(
+      todo.index = index + 1 
+    ))}
 
-];
+    updatetodo(cmt, replace){
+      this.todos.forEach((todo,index)=>(
+        index === cmt && (todo.desc = replace.value)
+      ))
+    }
 
-export default array;
+    reload(replay,main){
+      this.todos.push(...this.todos,...replay)
+      this.todos.map(todo => display(todo,main))
+    }
+
+  }

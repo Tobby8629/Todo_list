@@ -1,6 +1,8 @@
 import './style/index.css';
-import call from './module/loop.js';
-import check from './module/checker.js';
 
-call();
-check();
+import form from './module/form.js';
+import over from './module/window.js';
+
+over();
+form();
+
