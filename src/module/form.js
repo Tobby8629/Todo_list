@@ -11,6 +11,9 @@ const form = () => {
 
   fort.addEventListener('submit', (e) => {
     e.preventDefault();
+    if(get.value === ""){
+      return alert("write a task");
+    }
     master.innerHTML = '';
     todo.addTodo(get.value, master);
     get.value = '';
