@@ -1,8 +1,8 @@
 const display = (arry, main) => {
   const view = `
     <div class="ic">
-      <div class='white'></div>
-      <i class="fa-solid fa-check"></i>
+      <div class='white' id = 'box'></div>
+      <i class="fa-solid fa-check" id = 'check'></i>
     </div>
     <form>
       <input type="text" id="tasks" value= "${arry.desc}" readonly >
@@ -14,6 +14,8 @@ const display = (arry, main) => {
 
   const each = document.createElement('div');
   each.classList.add('each');
+  each.setAttribute('data-complete', arry.complete);
+
   each.innerHTML = view;
   main.appendChild(each);
 };
