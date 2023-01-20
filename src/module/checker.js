@@ -1,6 +1,7 @@
 const checker = (check, get, Arr) => {
   get.forEach((ge, index) => ge.addEventListener('click', () => {
     const grand = ge.parentElement.parentElement;
+    grand.classList.add('it')
     grand.setAttribute('id', 'completed');
     const tasks = grand.querySelector('#tasks');
     tasks.classList.add('line');
@@ -15,6 +16,7 @@ const checker = (check, get, Arr) => {
 
   check.forEach((chec, index) => chec.addEventListener('click', () => {
     const grand = chec.parentElement.parentElement;
+    grand.classList.remove('it')
     grand.removeAttribute('id');
     const tasks = grand.querySelector('#tasks');
     tasks.classList.remove('line');
