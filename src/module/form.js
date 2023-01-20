@@ -11,6 +11,9 @@ const form = () => {
 
   fort.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (get.value === '') {
+      return;
+    }
     master.innerHTML = '';
     todo.addTodo(get.value, master);
     get.value = '';
@@ -21,8 +24,9 @@ const form = () => {
 
     const remove = document.querySelectorAll('#trash');
     remove.forEach((re, index) => re.addEventListener('click', () => {
+      const very = index + 1;
       re.parentElement.parentElement.remove();
-      todo.removeTodo(index);
+      todo.removeTodo(very);
       todo.changeindex();
       localStorage.setItem('store', JSON.stringify(todo.todos));
     }));
@@ -35,8 +39,9 @@ const form = () => {
     more(todo);
     const remove = document.querySelectorAll('#trash');
     remove.forEach((re, index) => re.addEventListener('click', () => {
+      const very = index + 1;
       re.parentElement.parentElement.remove();
-      todo.removeTodo(index);
+      todo.removeTodo(very);
       todo.changeindex();
       localStorage.setItem('store', JSON.stringify(todo.todos));
     }));

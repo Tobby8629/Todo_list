@@ -12,9 +12,14 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
-    hot: true,
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
     open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+
   },
   module: {
     rules: [
