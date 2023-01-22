@@ -1,8 +1,8 @@
 const display = (arry, main) => {
   const view = `
     <div class="ic">
-      <div class='white' id = 'box'></div>
-      <i class="fa-solid fa-check" id = 'check'></i>
+      <div class='white' id ='box'></div>
+      <i class="fa-solid fa-check" id ='check'></i>
     </div>
     <form>
       <input type="text" id="tasks" value= "${arry.desc}" readonly >

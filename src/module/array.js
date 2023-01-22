@@ -9,7 +9,7 @@ export default class Arr {
   }
 
   addTodo(desc, main) {
-    const fresh = new Tasks(desc, this.todos.length + 1);
+    const fresh = new Tasks(desc, this.todos.length);
     this.todos.push(fresh);
     this.todos.map((todo) => display(todo, main));
   }
@@ -20,12 +20,12 @@ export default class Arr {
 
   changeindex() {
     this.todos.forEach((todo, index) => {
-      todo.index = index + 1;
+      todo.index = index;
     });
   }
 
-  changecomplete(ree, bee) {
-    checker(ree, bee, this.todos);
+  changecomplete(check, get) {
+    checker(check, get, this.todos);
   }
 
   updatetodo(cmt, replace) {
