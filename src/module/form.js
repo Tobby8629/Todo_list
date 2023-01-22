@@ -29,7 +29,6 @@ const form = () => {
       localStorage.setItem('store', JSON.stringify(todo.todos));
     }));
 
-    
     const get = document.querySelectorAll('#box');
     const check = document.querySelectorAll('#check');
     todo.changecomplete(check, get);
@@ -49,10 +48,10 @@ const form = () => {
     todo.reload(replay, master);
 
     more(todo);
-  
+
     const remove = document.querySelectorAll('#trash');
     remove.forEach((re, index) => re.addEventListener('click', () => {
-      const very = index
+      const very = index;
       re.parentElement.parentElement.remove();
       todo.removeTodo(very);
       todo.changeindex();
@@ -64,7 +63,6 @@ const form = () => {
   const check = document.querySelectorAll('#check');
   todo.changecomplete(check, get);
 
-  
   todo.linetr();
 
   const clean = document.querySelector('#clear');
