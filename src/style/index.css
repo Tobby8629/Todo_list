@@ -48,13 +48,13 @@ head {
   border: none;
 }
 
-.ic i {
+.ic #check {
   color: blue;
   display: none;
   font-size: 15px;
 }
 
-.it i {
+.it #check {
   display: block;
 }
 
