@@ -64,7 +64,6 @@ const form = () => {
     }));
   });
 
-
   const clean = document.querySelector('#clear');
 
   clean.addEventListener('click', () => {
