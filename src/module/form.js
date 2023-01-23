@@ -47,7 +47,13 @@ const form = () => {
     const replay = JSON.parse(localStorage.getItem('store'));
     todo.reload(replay, master);
 
-    todo.lintr();
+
+
+    todo.linetr();
+    const get = document.querySelectorAll('#box');
+    const check = document.querySelectorAll('#check');
+    todo.changecomplete(check, get);
+
     more(todo);
 
     const remove = document.querySelectorAll('#trash');
@@ -60,9 +66,6 @@ const form = () => {
     }));
   });
 
-  const get = document.querySelectorAll('#box');
-  const check = document.querySelectorAll('#check');
-  todo.changecomplete(check, get);
 
   const clean = document.querySelector('#clear');
 
