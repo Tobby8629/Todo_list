@@ -23,10 +23,10 @@ const form = () => {
     const remove = document.querySelectorAll('#trash');
     remove.forEach((re, index) => re.addEventListener('click', () => {
       const very = index;
-      re.parentElement.parentElement.remove();
       todo.removeTodo(very);
       todo.changeindex();
       localStorage.setItem('store', JSON.stringify(todo.todos));
+      re.parentElement.parentElement.remove();
     }));
 
     const get = document.querySelectorAll('#box');
@@ -57,10 +57,10 @@ const form = () => {
     const remove = document.querySelectorAll('#trash');
     remove.forEach((re, index) => re.addEventListener('click', () => {
       const very = index;
-      re.parentElement.parentElement.remove();
       todo.removeTodo(very);
       todo.changeindex();
       localStorage.setItem('store', JSON.stringify(todo.todos));
+      re.parentElement.parentElement.remove();
     }));
   });
 
