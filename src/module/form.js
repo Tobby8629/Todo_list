@@ -48,11 +48,11 @@ const form = () => {
     todo.reload(replay, master);
 
 
+
     todo.linetr();
     const get = document.querySelectorAll('#box');
     const check = document.querySelectorAll('#check');
     todo.changecomplete(check, get);
-  
 
     more(todo);
 
@@ -66,7 +66,6 @@ const form = () => {
     }));
   });
 
-  
 
   const clean = document.querySelector('#clear');
 
