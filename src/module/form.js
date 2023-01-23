@@ -47,8 +47,6 @@ const form = () => {
     const replay = JSON.parse(localStorage.getItem('store'));
     todo.reload(replay, master);
 
-
-
     todo.linetr();
     const get = document.querySelectorAll('#box');
     const check = document.querySelectorAll('#check');
