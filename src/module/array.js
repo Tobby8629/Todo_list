@@ -15,14 +15,14 @@ export default class Arr {
   }
 
   removeTodo(id) {
-    this.todos = this.todos.filter((td) => td.index !== id);
+    const pree = this.todos.filter((td) => td.unik !== id);
+    this.todos.length = 0;
+    this.todos.push (...this.todos, ...pree)
   }
 
   changeindex() {
-    this.todos.forEach((todo, index) => {
-      todo.index = index;
-    });
-  }
+     this.todos.forEach((todo,index) => todo.index = index)
+    }
 
   changecomplete(check, get) {
     checker(check, get, this.todos);
@@ -48,11 +48,11 @@ export default class Arr {
   }
 
   onfresh() {
-    this.todos.forEach((to, n) => {
+    this.todos.forEach((to) => {
       if (to.complete === true) {
         const each = document.querySelectorAll('.each');
-        each.forEach((e, p) => {
-          if (n === p) {
+        each.forEach((e) => {
+          if (to.unik === parseInt(e.dataset.unik) ) {
             e.setAttribute('id', 'completed');
             const pro = e.querySelector('.ic');
             pro.classList.add('it');
@@ -64,18 +64,18 @@ export default class Arr {
     });
   }
 
-  clear() {
-    this.todos.forEach((tas) => {
-      if (tas.complete === true) {
+  clear() {  
         const each = document.querySelectorAll('.each');
         each.forEach((tee) => {
           if (tee.id === 'completed') {
             tee.remove();
           }
-        });
-      }
+      const pree = this.todos.filter((td) => td.complete !== true);
+      this.todos.length = 0;
+      this.todos.push (...this.todos, ...pree)
+      
     });
 
-    this.todos = this.todos.filter((td) => td.complete !== true);
+    
   }
 }

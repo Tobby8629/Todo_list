@@ -1,6 +1,7 @@
 import Arr from './array.js';
 import more from './more.js';
 
+
 const form = () => {
   const master = document.querySelector('#master');
   const fort = document.querySelector('#form');
@@ -21,9 +22,8 @@ const form = () => {
     more(todo);
 
     const remove = document.querySelectorAll('#trash');
-    remove.forEach((re, index) => re.addEventListener('click', () => {
-      const very = index;
-      todo.removeTodo(very);
+    remove.forEach((re) => re.addEventListener('click', () => {
+      todo.removeTodo(parseInt(re.dataset.unik,10))
       todo.changeindex();
       localStorage.setItem('store', JSON.stringify(todo.todos));
       re.parentElement.parentElement.remove();
@@ -41,36 +41,41 @@ const form = () => {
       todo.changeindex();
       localStorage.setItem('store', JSON.stringify(todo.todos));
     });
+    console.log(todo)
   });
 
   window.addEventListener('load', () => {
     const replay = JSON.parse(localStorage.getItem('store'));
-    todo.reload(replay, master);
+    if (replay !== []) {
+      todo.reload(replay, master);
+    }
+    
 
-    todo.linetr();
+    
     const get = document.querySelectorAll('#box');
     const check = document.querySelectorAll('#check');
     todo.changecomplete(check, get);
+    todo.linetr();
 
     more(todo);
 
     const remove = document.querySelectorAll('#trash');
-    remove.forEach((re, index) => re.addEventListener('click', () => {
-      const very = index;
-      todo.removeTodo(very);
+    remove.forEach((re) => re.addEventListener('click', () => {
+      todo.removeTodo(parseInt(re.dataset.unik,10))
       todo.changeindex();
       localStorage.setItem('store', JSON.stringify(todo.todos));
-      re.parentElement.parentElement.remove();
+      re.parentElement.parentElement.remove();      
     }));
-  });
+
 
   const clean = document.querySelector('#clear');
-
   clean.addEventListener('click', () => {
     todo.clear();
     todo.changeindex();
     localStorage.setItem('store', JSON.stringify(todo.todos));
   });
+  });
+
 };
 
 export default form;

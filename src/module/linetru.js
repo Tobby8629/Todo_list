@@ -1,9 +1,9 @@
 const linetru = (tass) => {
-  tass.forEach((tas, n) => {
+  tass.forEach((tas) => {
     if (tas.complete === true) {
       const tasks = document.querySelectorAll('#tasks');
-      tasks.forEach((tif, p) => {
-        if (n === p) {
+      tasks.forEach((tif) => {
+        if (parseInt(tif.dataset.unik) === tas.unik) {
           tif.classList.add('line');
           const paren = tif.parentElement.parentElement;
           const eff = paren.querySelector('.ic');
