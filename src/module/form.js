@@ -46,16 +46,13 @@ const form = () => {
 
   window.addEventListener('load', () => {
     const replay = JSON.parse(localStorage.getItem('store'));
-    if (replay !== []) {
-      todo.reload(replay, master);
-    }
-    
-
+    todo.reload(replay, master);
     
     const get = document.querySelectorAll('#box');
     const check = document.querySelectorAll('#check');
     todo.changecomplete(check, get);
     todo.linetr();
+
 
     more(todo);
 
