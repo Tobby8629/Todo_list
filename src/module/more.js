@@ -1,6 +1,6 @@
 const more = (todo) => {
   const more = document.querySelectorAll('#more');
-  more.forEach((mor, cmt) => (
+  more.forEach((mor, index) => (
     mor.addEventListener('click', () => {
       const pop = mor.parentElement;
       pop.classList.add('pop');
@@ -10,8 +10,7 @@ const more = (todo) => {
       replace.removeAttribute('readonly');
       replace.focus();
       replace.addEventListener('keyup', () => {
-        todo.updatetodo(cmt, replace);
-        localStorage.setItem('store', JSON.stringify(todo.todos));
+        todo.updatetodo(index, replace);
       });
       const parent = mor.parentElement.previousElementSibling;
       parent.addEventListener('submit', (e) => {

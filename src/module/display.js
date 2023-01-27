@@ -1,3 +1,4 @@
+
 const display = (arry, main) => {
   const view = `
     <div class="ic">

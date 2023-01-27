@@ -1,7 +1,5 @@
 import Tasks from './tasks.js';
 import display from './display.js';
-import checker from './checker.js';
-import linetru from './linetru.js';
 
 export default class Arr {
   constructor() {
@@ -12,20 +10,27 @@ export default class Arr {
     const fresh = new Tasks(desc, this.todos.length);
     this.todos.push(fresh);
     this.todos.map((todo) => display(todo, main));
+    localStorage.setItem('store', JSON.stringify(this.todos));
   }
 
   removeTodo(id) {
     const pree = this.todos.filter((td) => td.unik !== id);
     this.todos.length = 0;
-    this.todos.push (...this.todos, ...pree)
+    this.todos.push(...this.todos, ...pree);
   }
 
   changeindex() {
-     this.todos.forEach((todo,index) => todo.index = index)
-    }
+    this.todos.forEach((todo, index) => { todo.index = index; });
+  }
 
-  changecomplete(check, get) {
-    checker(check, get, this.todos);
+  changecomplete(id) {
+    this.todos.forEach((ar) => {
+      if (ar.unik === id) {
+        ar.complete = !ar.complete;
+      }
+
+      localStorage.setItem('store', JSON.stringify(this.todos));
+    });
   }
 
   updatetodo(cmt, replace) {
@@ -35,6 +40,7 @@ export default class Arr {
           (todo.desc = replace.value)
         );
       }
+      localStorage.setItem('store', JSON.stringify(this.todos));
     });
   }
 
@@ -43,16 +49,12 @@ export default class Arr {
     this.todos.map((todo) => display(todo, main));
   }
 
-  linetr() {
-    linetru(this.todos);
-  }
-
   onfresh() {
     this.todos.forEach((to) => {
       if (to.complete === true) {
         const each = document.querySelectorAll('.each');
         each.forEach((e) => {
-          if (to.unik === parseInt(e.dataset.unik) ) {
+          if (to.unik === parseInt(e.dataset.unik, 10)) {
             e.setAttribute('id', 'completed');
             const pro = e.querySelector('.ic');
             pro.classList.add('it');
@@ -64,18 +66,9 @@ export default class Arr {
     });
   }
 
-  clear() {  
-        const each = document.querySelectorAll('.each');
-        each.forEach((tee) => {
-          if (tee.id === 'completed') {
-            tee.remove();
-          }
-      const pree = this.todos.filter((td) => td.complete !== true);
-      this.todos.length = 0;
-      this.todos.push (...this.todos, ...pree)
-      
-    });
-
-    
+  clear() {
+    const pree = this.todos.filter((td) => td.complete !== true);
+    this.todos.length = 0;
+    this.todos.push(...this.todos, ...pree);
   }
 }
